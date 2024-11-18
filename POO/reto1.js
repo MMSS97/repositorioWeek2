@@ -1,16 +1,33 @@
-class persona {
-    constructor (nombre, apellido, edad, colorDePelo, colorDeOjos){
-        this.nombre= nombre
+
+
+class Persona {
+    constructor (nombre, apellido, colorDePelo, colorDeOjos,peso, altura, anyoDeNacimiento, hobbies=[]){
+        this.nombre=nombre
         this.apellido=apellido
-        this.edad=edad
         this.colorDePelo=colorDePelo
         this.colorDeOjos=colorDeOjos
+        this.peso=peso
+        this.altura=altura
+        this.anyoDeNacimiento=anyoDeNacimiento
+        this.hobbies=hobbies
     }
+imc(){
+    return this.peso/(this.altura*this.altura)*10000
 }
-let persona1= new persona("marcos","jimenes",15,"castaño","azules")
-let persona2= new persona("Irene","Mosca",17,"rubio","azules")
-let persona3= new persona("Ricardo","alonso",13,"negro","negros")
-console.log(persona1)
-console.log(persona2)
-console.log(persona3)
+edad(){return 2024-this.anyoDeNacimiento}
+printAll(){return "nombre:"+" -"+this.nombre + "\napellido:"+" -"+this.apellido + "\ncolor de pelo:"+" -"+this.colorDePelo+ "\ncolor de ojos:"+" -"+this.colorDeOjos+ "\npeso:"+" -"+this.peso+ "\naltura:"+" -"+this.altura
+}
+}
+// let persona1= new Persona("marcos","jimenes","castaño","azules",68,170,1998,["nadar","jugar ajedrez","senderismo"])
+// let persona2= new Persona("Irene","Mosca","rubio","azules",50,160,1980)
+// let persona3= new Persona("Ricardo","alonso","negro","negros",60,158,1996)
+// console.log(persona1)
+// console.log(persona2)
+// console.log(persona3)
+// console.log(persona1.imc())
+// console.log(persona2.edad())
+// console.log(persona1.printAll())
+// console.log(persona1)
 
+
+module.exports={Persona}
